@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  // provider = "mysql"
+   provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               Int        @id @default(autoincrement())
+  role             String?    @default("User")
+  status           String?    @default("Active")
+  userId           String?    @unique
+  name             String?
+  email            String?    @unique
+  password         String?
+  DOB              String?
+  aadhar           String?
+  pan              String?
+  mobile           String?
+  secondary_mobile String?
+  address          String?
+  account_no       String?
+  upi_id           String?
+  account_holder   String?
+  IFSC             String?
+  amount           Int?
+  return           Int?
+  createdOn        DateTime   @default(now())
+  updatedOn        DateTime   @updatedAt
+  nominees         nominee[]
+}
+
+model nominee {
+  id              Int     @id @default(autoincrement())
+  name            String?
+  email           String? 
+  aadhar          String?
+  pan             String?
+  mobile          String? 
+  account_no      String?
+  upi_id          String?
+  account_holder  String?
+  IFSC            String?
+  userId          String @unique
+  user            User?   @relation(fields: [userId], references: [userId])
+}
+
+model monthpackages {
+  id        Int   @id @default(autoincrement())
+  packId    String @unique
+  amount    Int
+  years     Int
+  returns   Int
+  createdOn DateTime @default(now())
+  updatedOn  DateTime @updatedAt
+}
+model anunualPackages {
+  id        Int   @id @default(autoincrement())
+  packId    String @unique
+  amount    Int
+  years     Int
+  returns   Int
+  createdOn DateTime @default(now())
+  updatedOn  DateTime @updatedAt
+}
+
+model transaction {
+  id        Int    @id @default(autoincrement())
+  userId    String?
+  name      String?
+  amount    Int?
+  transId   String?
+  packId    String
+  count     Int?
+  status    String? @default("Pending")
+  createdOn DateTime @default(now())
+  updatedOn  DateTime @updatedAt
+}
+
+model withdrawal {
+  id        Int    @id @default(autoincrement())
+  name      String
+  userId    String @unique
+  amount    Int
+  status    String @default("Pending")
+  createdOn DateTime @default(now())
+  updatedOn  DateTime @updatedAt
+}
+
+model history {
+  id        Int    @id @default(autoincrement())
+  name      String
+  userId    String @unique
+  amount    Int
+  status    String @default("Success")
+  createdOn DateTime @default(now())
+  updatedOn  DateTime @updatedAt
+}

@@ -1,0 +1,39 @@
+user page - 6
+---------
+
+api-1---> " dashboard - show the packages with details " - monthly 1 to 5 and annual 1 to 5
+api-2---> " withdrawal - id, userid, name, amount, staus " .............................done
+api-3---> " show the data of the user " - userid(all except password) ...........................done
+//////////////////api-4---> " show the history of the payments " - id, amount, date, status(pending or success)//////////////
+api-5---> " make payments "   userId, amount,   createdOn  updatedOn  ..................................done
+api-6---> "show the package " ...................done
+
+
+admin panel - 8
+-----------
+
+api-1---> " show the all user in the database " - id, userid, name  .................................done
+api-2---> " edit the user in database " - userid (edit the any data)...........................done
+api-3---> " show the withdrawal request of the user " - id, userid, name, amount, status
+api-4---> " edit the user profile and amount of the user " .........................done
+api-5---> " show the package in the database " - all ...........................done
+api-6---> " edit the package number and details  " .......................done
+api-7---> " show the suceess transaction details in history "
+api-8---> " create the package " ....................done
+
+total 14 api started on 15-12-2023 done - 5 balance - 9
+
+user - total - 6 &&& done - 2 &&& balance - 4
+-----------------------------------------------
+api-5 on 18-12-2023 done(user)
+api-6 on 19-12-2023 done(user)
+
+admin - total - 8 &&& done - 3 &&& balance - 5
+-----------------------------------------------
+api-5 on 19-12-2023 done
+api-6 on 19-12-2023 done
+api-8 on 19-12-2023 done
+
+///////////////////////////////////
+//login and user --------- (done)//
+///////////////////////////////////

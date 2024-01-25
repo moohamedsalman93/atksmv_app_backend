@@ -21,7 +21,6 @@ loginRouter.post('/signUp', signUp);
 //#region
 //login
 async function login(req: Request, res: Response) {
-  console.log('s')
   try {
     const data = loginSchema.safeParse(req.body);
 
